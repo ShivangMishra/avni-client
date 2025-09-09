@@ -43,6 +43,7 @@ import SingleSelectEncounterFormElement from "./formElement/SingleSelectEncounte
 import MultiSelectEncounterFormElement from "./formElement/MultiSelectEncounterFormElement";
 import MediaV2FormElement from "./formElement/MediaV2FormElement";
 import QRFormElement from "./formElement/QRFormElement";
+import OCRFormElement from "./formElement/OCRFormElement";
 import Colors from "../primitives/Colors";
 
 class FormElementGroup extends AbstractComponent {
@@ -352,8 +353,16 @@ class FormElementGroup extends AbstractComponent {
                                 observationHolder={this.props.observationHolder}
                                 subjectUUID={this.props.subjectUUID}
                             />, uniqueKey, formElement.uuid === erroredUUID);
-                        } else if (formElement.concept.datatype === Concept.dataType.QR) {
+                        } else if (1 === 2 && formElement.concept.datatype === Concept.dataType.QR) {
                             return this.wrap(<QRFormElement
+                                key={uniqueKey}
+                                element={formElement}
+                                actionName={this.props.actions["PRIMITIVE_VALUE_CHANGE"]}
+                                value={this.getSelectedAnswer(formElement.concept, new PrimitiveValue())}
+                                validationResult={validationResult}
+                            />, uniqueKey, formElement.uuid === erroredUUID);
+                        } else if (formElement.concept.datatype === Concept.dataType.QR) {
+                            return this.wrap(<OCRFormElement
                                 key={uniqueKey}
                                 element={formElement}
                                 actionName={this.props.actions["PRIMITIVE_VALUE_CHANGE"]}

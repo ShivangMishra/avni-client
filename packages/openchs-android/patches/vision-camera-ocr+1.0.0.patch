@@ -1,0 +1,12 @@
+diff --git a/node_modules/vision-camera-ocr/android/build.gradle b/node_modules/vision-camera-ocr/android/build.gradle
+index 6d81d85..70ae898 100644
+--- a/node_modules/vision-camera-ocr/android/build.gradle
++++ b/node_modules/vision-camera-ocr/android/build.gradle
+@@ -26,6 +26,7 @@ def getExtOrIntegerDefault(name) {
+ }
+ 
+ android {
++  namespace "com.visioncameraocr"
+   compileSdkVersion getExtOrIntegerDefault('compileSdkVersion')
+   buildToolsVersion getExtOrDefault('buildToolsVersion')
+   defaultConfig {

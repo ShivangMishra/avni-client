@@ -9,10 +9,11 @@ module.exports = function (api) {
     const plugins = [
         ["@babel/plugin-proposal-decorators", {"legacy": true}],
         "@babel/plugin-proposal-object-rest-spread",
+        // react-native-reanimated plugin MUST be last
         [
             'react-native-reanimated/plugin',
             {
-                globals: ['__scanCodes'],
+                globals: ['__scanCodes', '__scanOCR'],
             },
         ]
     ];
